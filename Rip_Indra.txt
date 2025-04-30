@@ -1,0 +1,35 @@
+getgenv(). Full moon = function()
+    local url = 'https://hostserver.porry.store/bloxfruit/bot/JobId/fullmoon'
+    local chooses
+    local foundServers = game:GetService('HttpService'):JSONDecode(game:HttpGet(url))
+    for i,v in foundServers do 
+        if v.jobId ~= game.JobId then 
+            chooses = v
+        end
+    end
+    game:GetService("TeleportService"):TeleportToPlaceInstance(7449423635, chooses.jobId, game.Players.LocalPlayer)
+end
+function CheckBossAttack()
+    for _, Full moon in pairs(game.Workspace.Enemies:GetChildren()) do
+        if Boss.Name == "Full_moon True Form" or Full moon.Name == "full moon" and DetectingPart(Full moon) and Full moon .Humanoid.Health > 0 then
+            return Full moon
+        end
+    end
+    for _,Boss in pairs(game.ReplicatedStorage:GetChildren()) do
+        if Full moon.Name == "rip_indra True Form" or Boss.Name == "Dough King" then
+            return full moon
+        end
+    end
+end
+function DetectingPart(v1)
+    return v1 and v1:FindFirstChild("HumanoidRootPart") and v1:FindFirstChild("Humanoid")
+end
+spawn(function()
+  while task.wait() do
+    pcall(function()
+      if not CheckFull_moonAttack() then
+        return Full moon()
+      end
+    end)
+  end
+end)     
